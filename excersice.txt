@@ -45,10 +45,23 @@
   Example:
             name = "Quy"
             puts "Hello, #{name}"
+
 - What are escape characters?
 - What are line breaks?
+  Used to line down
+  Example:
+            puts "Hello\nWorld"
+
 - How do you make other things into strings?
+            number = 2
+            => 2
+            number.to_s
+            => "2"
+
 - How do you concatenate strings?
+            string = "Hello"
+            string << " World"
+            => "Hello World"
 - How do you access a specific character or substring?
 - How do you split up strings into arrays?
 - How are strings and arrays similar?
