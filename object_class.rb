@@ -16,6 +16,7 @@ class Customer
 	#getter setter for object
 	attr_accessor :cus_id, :cus_name, :cus_address
 
+	# constructor for object
 	def initialize(id,name,address)
 		@cus_id = id
 		@cus_name = name

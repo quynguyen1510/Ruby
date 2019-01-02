@@ -48,12 +48,14 @@ def delete_cus(arr_cus)
 	arr_cus.delete_if{ |cus| cus.cus_id === id }
 end
 
-i = 0
-while i < n.to_i 
-	arr_cus.push(add_cus)
-	i += 1
+# i = 0
+# while i < n.to_i
+# 	arr_cus.push(add_cus)
+# 	i += 1
+# end
+for i in 0...n.to_i
+  arr_cus.push(add_cus)
 end
-
 # Customer::CUSTOMER.each do |cus|
 # 	cus.display_infor
 # end

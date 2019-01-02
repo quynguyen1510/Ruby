@@ -1,13 +1,31 @@
-#loop from 1 to 3 (..) if (...) looping form 1 to 2
-for i in 1..3
-	if(i > 2)
-		puts "Great"
-	else
-		puts "Not great"
-	end
-end
+class Integer
+	def my_times
+		c = 0
+		while c < self
+			yield(c) #call block in my_each
+			c += 1
+		end
+		self 
+	end 
+end 
 
-#each (i like a index of array)
-[1,2,3].each do |i|
-	puts i
-end
+class Array
+	def my_each
+		# 3.my_times 
+		size.my_times do |i|
+			yield(self[i]) 
+		end
+	self
+	end 
+
+	def my_map
+		arr = []
+		self.my_each do |i|
+			tmp = yield(i)
+			arr << tmp
+		end
+		arr
+	end
+end 
+[1,2,3].my_each{|i| puts "#{i} time"}
+puts [1,2,3].my_map{|e| e+2}
