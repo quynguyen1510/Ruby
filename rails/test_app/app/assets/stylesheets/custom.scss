@@ -1,0 +1,42 @@
+header {
+  background-color: black;
+}
+nav .nav li {
+  float:left;
+  a {
+    display: inline;
+    color: grey;
+    &:hover{
+      color: white;
+      text-decoration-line: none;
+    }
+  }
+}
+
+#logo {
+  color: white;
+  font-size: 3em;
+  &:hover{
+    text-decoration-line: none;
+  }
+}
+.center h2 a {
+  text-decoration-line: none;
+}
+h1 {
+  font-size: 4em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+.center {
+  text-align: center;
+}

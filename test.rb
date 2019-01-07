@@ -32,25 +32,36 @@
 # def non_duplicated_values(values)
 #   puts values.find_all { |x| values.count(x) == 1 }
 # end
-# non_duplicated_values([1,2,2,2,3,4,4])
+# non_duplicated_values([1,2,2,2,3,4,4,5,6,7,7,7])
 
-class Dog
+# class Dog
  
-  def initialize(leg)
-    @@leg = leg
-  end
+#   def initialize(leg)
+#     @@leg = leg
+#   end
  
-  def show_leg
-    puts @@leg
-  end
+#   def show_leg
+#     puts @@leg
+#   end
  
+# end
+ 
+# first = Dog.new(4)
+# first.show_leg # 4
+ 
+# second = Dog.new(10)
+# second.show_leg # 10
+ 
+# first.show_leg # 10
+
+# def sum_of_cubes(a, b)
+#   (a..b).inject{|sum,i| sum += (i**3)}
+# end
+# puts sum_of_cubes(1,3)
+
+def palindromes?(sentence)
+	string = sentence.downcase.gsub(" ","")
+	string == string.reverse
 end
- 
-first = Dog.new(4)
-first.show_leg # 4
- 
-second = Dog.new(10)
-second.show_leg # 10
- 
-first.show_leg # 10
 
+p palindromes?("Never odd or even")

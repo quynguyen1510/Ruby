@@ -36,3 +36,11 @@ cus2 = Customer.new(2,"Eden Hardzard","Chelsea")
 cus2.display_infor
 cus2.cus_name = "Thorgan Hardzard"
 cus2.display_infor
+
+
+def abc
+	puts a
+end 
+
+abc do #... 
+end 
