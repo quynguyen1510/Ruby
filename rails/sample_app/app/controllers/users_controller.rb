@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:show, :edit, :update]
   before_action :correct_user, only: [:show, :edit, :update]
+  before_action :admin_user,  only: [:destroy]
+  
+  def index
+    @users = User.all  
+  end
 
   def new
   	@user = User.new
@@ -30,6 +35,12 @@ class UsersController < ApplicationController
   	end
   end
   
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = 'User detroyed'
+    redirect_to users_path 
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -54,6 +65,12 @@ class UsersController < ApplicationController
       unless @user == current_user
         flash[:danger] = "You not have access"
         redirect_to(root_path) 
+      end
+    end
+
+    def admin_user
+      unless current_user.admin?
+        redirect_to(root_path)  
       end
     end
 end
