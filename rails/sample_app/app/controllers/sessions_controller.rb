@@ -5,10 +5,17 @@ class SessionsController < ApplicationController
   def create
   	user = User.find_by(email: params[:session][:email].downcase)
   	if user && user.authenticate(params[:session][:password])
-  	  #if true save iduser in session and direct to url user/welcome
-  	  log_in(user)
-      flash[:success] = 'Welcome to demo' 
-      redirect_back_or user
+  	  #if true save iduser in session and direct to url user/welcome 
+      #and user is admin direct to list users
+      if user.admin?
+  	    log_in(user)
+        flash[:success] = 'Welcome to demo' 
+        redirect_to users_path
+      else
+        log_in(user)
+        flash[:success] = 'Welcome to demo' 
+        redirect_back_or user  
+      end
   	else
   	  #show the messege if error end show user/new to login again
       flash.now[:danger] = 'Invalid email or password'
