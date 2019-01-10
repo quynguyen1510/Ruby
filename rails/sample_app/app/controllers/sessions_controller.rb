@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	  #if true save iduser in session and direct to url user/welcome
   	  log_in(user)
       flash[:success] = 'Welcome to demo' 
-  	  redirect_to current_user	
+      redirect_back_or user
   	else
   	  #show the messege if error end show user/new to login again
       flash.now[:danger] = 'Invalid email or password'
