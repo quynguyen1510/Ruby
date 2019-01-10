@@ -1,6 +1,6 @@
 module SessionsHelper
   # save userID in session
-  def login(user)
+  def login user
   	session[:user_id] = user.id
   end
 

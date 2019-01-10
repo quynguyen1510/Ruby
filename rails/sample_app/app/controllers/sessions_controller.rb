@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:session][:email].downcase)
   	if user && user.authenticate(params[:session][:password])
   	  #if true save iduser in session and direct to url user/welcome
-  	  login(user)
+  	  log_in(user)
+      flash[:success] = 'Welcome to demo' 
   	  redirect_to current_user	
   	else
   	  #show the messege if error end show user/new to login again
