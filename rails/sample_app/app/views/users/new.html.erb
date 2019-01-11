@@ -5,16 +5,16 @@
     <%= form_for(@user, url: signup_path) do |f| %>
       <%= render 'message/error_messages' %>
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :required => "required" %>
 
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, :required => "required", :pattern => "^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" %>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, :required => "required", :minlength => 8 , :id => "password" %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, :required => "required", :id => 'password_confirmation' %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>

@@ -9,10 +9,20 @@ class SessionsController < ApplicationController
       #and user is admin direct to list users
       if user.admin?
   	    log_in(user)
+        if params[:session][:remember_me] == '1'
+          remember(user)
+        else
+          forget(user)
+        end
         flash[:success] = 'Welcome to demo' 
         redirect_to users_path
       else
         log_in(user)
+        if params[:session][:remember_me] == '1'
+          remember(user)
+        else
+          forget(user)
+        end
         flash[:success] = 'Welcome to demo' 
         redirect_back_or user  
       end
