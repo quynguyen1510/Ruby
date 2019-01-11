@@ -6,9 +6,10 @@ This project is simple authentication app
 * Database: MySQL
 
  Setup:
-* Run to create database and table
+* Run to create database and table, create sample admin account
   $ rails db:create
   $ rails db:migrate
+  $ rails db:seed
 
 * Run to install libraries
   $ bundle install
