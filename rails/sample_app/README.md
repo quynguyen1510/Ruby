@@ -1,24 +1,19 @@
-# README
+This project is simple authentication app 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ Technologies:
+* Ruby-version: 2.5.3
+* Rails-version: 5.2.2
+* Database: MySQL
 
-Things you may want to cover:
+ Setup:
+* Run to create database and table
+  $ rails db:create
+  $ rails db:migrate
 
-* Ruby version
+* Run to install libraries
+  $ bundle install
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ Features:
+* Signup, login and save cookies, logout 
+* Edit user profile 
+* Delete user with admin role
