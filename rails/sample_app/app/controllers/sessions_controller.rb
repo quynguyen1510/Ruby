@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :check_login_url,  only: [:new]
+
   def new
   end
 
@@ -37,4 +39,13 @@ class SessionsController < ApplicationController
   	log_out
   	redirect_to root_path
   end
+
+  private 
+
+    def check_login_url
+      if logged_in?
+        flash[:warning] = 'You are already login'
+        redirect_to user_path(current_user)
+      end
+    end
 end
